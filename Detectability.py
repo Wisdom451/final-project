@@ -16,6 +16,8 @@ transition = [{'a':{"q1"},'b':{"q1"},'c':{"q1"},'d':{"q4"},'uo':set()},
              {'a':{"q3"},'b':{"q3"},'c':{"q2"},'d':{"q3"},'uo':set()},
              {'a':{"q3"},'b':{"q4"},'c':{"q4"},'d':{"q4"},'uo':set()}]
 
+#Give the specification point, the state pair should be turple as the element of the List "Tspec"
+Tspec = []
 
 #Build the state table for the automata
 state_table = {}
@@ -24,8 +26,7 @@ for i in states:
     state_table.update({i: transition[j]})
     j+=1
 
-#Give the specification point
-Tspec = []
+
 
 #Calculate the unobservable reach for a state, and store it in the state_table
 def UnobservableReach(state, state_table):
